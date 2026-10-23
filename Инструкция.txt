@@ -1,0 +1,5 @@
+cd /s/python/projects/PythonProject_tutorialPySide6
+git fetch origin bot/fixes
+git checkout -- patches/ apply_patch.sh
+./apply_patch.sh 0001-fix-gitignore-add-requirements.patch
+./apply_patch.sh 0002-add-apply-scripts.patch

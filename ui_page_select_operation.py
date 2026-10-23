@@ -415,12 +415,12 @@ class Ui_PageSelectOperation(object):
 
         self.gridLayout.addWidget(self.btn_kontrol_otk_2, 4, 0, 1, 1)
 
-        self.btn_kontrol_otk_13 = QPushButton(self.frame)
-        self.btn_kontrol_otk_13.setObjectName(u"btn_kontrol_otk_13")
-        self.btn_kontrol_otk_13.setEnabled(True)
-        self.btn_kontrol_otk_13.setFont(font3)
-        self.btn_kontrol_otk_13.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_13.setStyleSheet(u"QPushButton:hover {\n"
+        self.btn_otreznaya = QPushButton(self.frame)
+        self.btn_otreznaya.setObjectName(u"btn_otreznaya")
+        self.btn_otreznaya.setEnabled(True)
+        self.btn_otreznaya.setFont(font3)
+        self.btn_otreznaya.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_otreznaya.setStyleSheet(u"QPushButton:hover {\n"
 "	color: rgb(221, 71, 71);\n"
 "	border-left: 1px solid rgb(203, 88, 88);\n"
 "	border-right: 1px solid rgb(203, 88, 88);\n"
@@ -428,10 +428,10 @@ class Ui_PageSelectOperation(object):
 "}")
         icon14 = QIcon()
         icon14.addFile(u":/operations/operations/cut.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_13.setIcon(icon14)
-        self.btn_kontrol_otk_13.setIconSize(QSize(60, 60))
+        self.btn_otreznaya.setIcon(icon14)
+        self.btn_otreznaya.setIconSize(QSize(60, 60))
 
-        self.gridLayout.addWidget(self.btn_kontrol_otk_13, 3, 0, 1, 1)
+        self.gridLayout.addWidget(self.btn_otreznaya, 3, 0, 1, 1)
 
         self.btn_shlifovanie = QPushButton(self.frame)
         self.btn_shlifovanie.setObjectName(u"btn_shlifovanie")
@@ -667,7 +667,7 @@ class Ui_PageSelectOperation(object):
         self.btn_sverlilnaya.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0421\u0412\u0415\u0420\u041b\u0418\u041b\u042c\u041d\u0410\u042f", None))
         self.btn_kontrol_otk_9.setText(QCoreApplication.translate("PageSelectOperation", u"       \u0421\u0411\u041e\u0420\u041a\u0410", None))
         self.btn_kontrol_otk_2.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0413\u0418\u0414\u0420\u0410\u0412\u041b\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f", None))
-        self.btn_kontrol_otk_13.setText(QCoreApplication.translate("PageSelectOperation", u"   \u041e\u0422\u0420\u0415\u0417\u041d\u0410\u042f", None))
+        self.btn_otreznaya.setText(QCoreApplication.translate("PageSelectOperation", u"   \u041e\u0422\u0420\u0415\u0417\u041d\u0410\u042f", None))
         self.btn_shlifovanie.setText(QCoreApplication.translate("PageSelectOperation", u"\u0428\u041b\u0418\u0424\u041e\u0412\u0410\u041b\u042c\u041d\u0410\u042f", None))
         self.btn_kontrol_otk_5.setText(QCoreApplication.translate("PageSelectOperation", u" \u0421\u0412\u0410\u0420\u041a\u0410", None))
         self.btn_kontrol_otk_7.setText(QCoreApplication.translate("PageSelectOperation", u" \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f \u041d\u0410 \u0413\u0415\u0420\u041c\u0415\u0422\u0418\u0427\u041d\u041e\u0421\u0422\u042c", None))
