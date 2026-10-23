@@ -27,6 +27,7 @@ from views.pages.page_sborka import PageSborka
 from views.pages.page_select_operation import PageSelectOperation
 from views.pages.page_shlifovanie import PageShlifovanie
 from views.pages.page_shlifovanie_osnovnoe import PageShlifovanieOsnovnoe
+from views.pages.page_otreznaya import PageOtreznaya
 from views.pages.page_shlifovanie_start import PageShlifovanieStart
 from views.pages.page_sverlilnaya import PageSverlilnaya
 from views.pages.page_tehno_iot import PageTehnoIot
@@ -149,6 +150,9 @@ class Ui_MainWindow(object):
         self.page_shlifovanie_osnovnoe = PageShlifovanieOsnovnoe()
         self.page_shlifovanie_osnovnoe.setObjectName(u"page_shlifovanie_osnovnoe")
         self.stackedWidget.addWidget(self.page_shlifovanie_osnovnoe)
+        self.page_otreznaya = PageOtreznaya()
+        self.page_otreznaya.setObjectName(u"page_otreznaya")
+        self.stackedWidget.addWidget(self.page_otreznaya)
 
         self.verticalLayout.addWidget(self.stackedWidget)
 

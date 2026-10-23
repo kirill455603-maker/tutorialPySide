@@ -29,9 +29,10 @@ class OtreznayaController(BaseOperationController):
         return self.ui.page_otreznaya
 
     def go_to_main_page(self):
-        # TODO: проверь индекс! page_otreznaya добавлена в конец stackedWidget —
-        # сейчас это индекс 21 (после page_shlifovanie_osnovnoe).
-        self.ui.stackedWidget.setCurrentIndex(21)
+        # Возврат на страницу выбора операции (page_select_operation) —
+        # индекс вычисляется динамически, чтобы не ломаться при добавлении новых страниц.
+        idx = self.ui.stackedWidget.indexOf(self.ui.page_select_operation)
+        self.ui.stackedWidget.setCurrentIndex(idx)
 
     def _go_to_main_page(self):
         self.exit_to_main_menu_requested.emit()
