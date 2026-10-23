@@ -64,6 +64,8 @@ echo ----------------------------------------
 %UIC_PATH% -g python ui_page_shlifovanie.ui -o ui_page_shlifovanie.py
 %UIC_PATH% -g python ui_page_shlifovanie_start.ui -o ui_page_shlifovanie_start.py
 %UIC_PATH% -g python ui_page_shlifovanie_osnovnoe.ui -o ui_page_shlifovanie_osnovnoe.py
+%UIC_PATH% -g python ui_page_otreznaya.ui -o ui_page_otreznaya.py
+
 
 echo.
 echo [2/2] Конвертация ресурсов QRC...
