@@ -1,0 +1,9 @@
+# Зависимости проекта Technopro RPA
+# Установка: pip install -r requirements.txt
+
+PySide6          # GUI-фреймворк (окно, страницы, диалоги)
+pyautogui        # RPA: распознавание экрана по PNG-шаблонам, клики, ввод
+pyscreeze        # Распознавание изображений (logic/automation.py)
+keyboard         # Глобальные горячие клавиши
+pyperclip        # Работа с буфером обмена
+openpyxl         # Excel-справочники
