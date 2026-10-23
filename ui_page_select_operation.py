@@ -223,165 +223,7 @@ class Ui_PageSelectOperation(object):
         self.btn_sborka.setIcon(icon1)
         self.btn_sborka.setIconSize(QSize(160, 100))
 
-        self.gridLayout.addWidget(self.btn_sborka, 9, 0, 1, 1)
-
-        self.btn_shlifovanie = QPushButton(self.frame)
-        self.btn_shlifovanie.setObjectName(u"btn_shlifovanie")
-        self.btn_shlifovanie.setEnabled(True)
-        self.btn_shlifovanie.setFont(font3)
-        self.btn_shlifovanie.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_shlifovanie.setStyleSheet(u"")
-        icon2 = QIcon()
-        icon2.addFile(u":/operations/operations/shlifovka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_shlifovanie.setIcon(icon2)
-        self.btn_shlifovanie.setIconSize(QSize(45, 45))
-
-        self.gridLayout.addWidget(self.btn_shlifovanie, 3, 1, 1, 1)
-
-        self.btn_kontrol_otk_5 = QPushButton(self.frame)
-        self.btn_kontrol_otk_5.setObjectName(u"btn_kontrol_otk_5")
-        self.btn_kontrol_otk_5.setEnabled(False)
-        self.btn_kontrol_otk_5.setFont(font3)
-        self.btn_kontrol_otk_5.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_5.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon3 = QIcon()
-        icon3.addFile(u":/operations/operations/svarka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_5.setIcon(icon3)
-        self.btn_kontrol_otk_5.setIconSize(QSize(70, 70))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk_5, 4, 1, 1, 1)
-
-        self.btn_kontrol_otk = QPushButton(self.frame)
-        self.btn_kontrol_otk.setObjectName(u"btn_kontrol_otk")
-        self.btn_kontrol_otk.setFont(font3)
-        self.btn_kontrol_otk.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_kontrol_otk.setStyleSheet(u"")
-        icon4 = QIcon()
-        icon4.addFile(u":/operations/operations/otk-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk.setIcon(icon4)
-        self.btn_kontrol_otk.setIconSize(QSize(50, 50))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk, 2, 0, 1, 1)
-
-        self.btn_tokarnaya = QPushButton(self.frame)
-        self.btn_tokarnaya.setObjectName(u"btn_tokarnaya")
-        self.btn_tokarnaya.setFont(font3)
-        self.btn_tokarnaya.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_tokarnaya.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.btn_tokarnaya.setStyleSheet(u"")
-        icon5 = QIcon()
-        icon5.addFile(u":/operations/operations/tokarnaya-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_tokarnaya.setIcon(icon5)
-        self.btn_tokarnaya.setIconSize(QSize(70, 70))
-
-        self.gridLayout.addWidget(self.btn_tokarnaya, 0, 0, 1, 1)
-
-        self.btn_kontrol_otk_10 = QPushButton(self.frame)
-        self.btn_kontrol_otk_10.setObjectName(u"btn_kontrol_otk_10")
-        self.btn_kontrol_otk_10.setEnabled(False)
-        self.btn_kontrol_otk_10.setFont(font3)
-        self.btn_kontrol_otk_10.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_10.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon6 = QIcon()
-        icon6.addFile(u":/operations/operations/term_obrabotka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_10.setIcon(icon6)
-        self.btn_kontrol_otk_10.setIconSize(QSize(55, 55))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk_10, 7, 1, 1, 1)
-
-        self.btn_sverlilnaya = QPushButton(self.frame)
-        self.btn_sverlilnaya.setObjectName(u"btn_sverlilnaya")
-        self.btn_sverlilnaya.setFont(font3)
-        self.btn_sverlilnaya.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_sverlilnaya.setStyleSheet(u"")
-        icon7 = QIcon()
-        icon7.addFile(u":/operations/operations/sverlovka-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_sverlilnaya.setIcon(icon7)
-        self.btn_sverlilnaya.setIconSize(QSize(60, 60))
-
-        self.gridLayout.addWidget(self.btn_sverlilnaya, 0, 1, 1, 1)
-
-        self.btn_kontrol_otk_2 = QPushButton(self.frame)
-        self.btn_kontrol_otk_2.setObjectName(u"btn_kontrol_otk_2")
-        self.btn_kontrol_otk_2.setEnabled(False)
-        self.btn_kontrol_otk_2.setFont(font3)
-        self.btn_kontrol_otk_2.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_2.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon8 = QIcon()
-        icon8.addFile(u":/operations/operations/hydro_ispit.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_2.setIcon(icon8)
-        self.btn_kontrol_otk_2.setIconSize(QSize(50, 50))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk_2, 3, 0, 1, 1)
-
-        self.btn_kontrol_otk_8 = QPushButton(self.frame)
-        self.btn_kontrol_otk_8.setObjectName(u"btn_kontrol_otk_8")
-        self.btn_kontrol_otk_8.setEnabled(False)
-        self.btn_kontrol_otk_8.setFont(font3)
-        self.btn_kontrol_otk_8.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_8.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon9 = QIcon()
-        icon9.addFile(u":/operations/operations/elect_ispit.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_8.setIcon(icon9)
-        self.btn_kontrol_otk_8.setIconSize(QSize(70, 70))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk_8, 6, 1, 1, 1)
-
-        self.btn_kontrol_otk_12 = QPushButton(self.frame)
-        self.btn_kontrol_otk_12.setObjectName(u"btn_kontrol_otk_12")
-        self.btn_kontrol_otk_12.setEnabled(False)
-        self.btn_kontrol_otk_12.setFont(font3)
-        self.btn_kontrol_otk_12.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_12.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon10 = QIcon()
-        icon10.addFile(u":/operations/operations/slesarnaya.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_12.setIcon(icon10)
-        self.btn_kontrol_otk_12.setIconSize(QSize(55, 55))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk_12, 7, 0, 1, 1)
-
-        self.btn_kontrol_otk_7 = QPushButton(self.frame)
-        self.btn_kontrol_otk_7.setObjectName(u"btn_kontrol_otk_7")
-        self.btn_kontrol_otk_7.setEnabled(False)
-        self.btn_kontrol_otk_7.setFont(font3)
-        self.btn_kontrol_otk_7.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_7.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon11 = QIcon()
-        icon11.addFile(u":/operations/operations/gel_ispit.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_7.setIcon(icon11)
-        self.btn_kontrol_otk_7.setIconSize(QSize(70, 70))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk_7, 5, 1, 1, 1)
+        self.gridLayout.addWidget(self.btn_sborka, 10, 0, 1, 1)
 
         self.btn_razmetka_2 = QPushButton(self.frame)
         self.btn_razmetka_2.setObjectName(u"btn_razmetka_2")
@@ -394,96 +236,46 @@ class Ui_PageSelectOperation(object):
 "	border-right: 1px solid rgb(203, 88, 88);\n"
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
 "}")
-        icon12 = QIcon()
-        icon12.addFile(u":/operations/operations/goriz-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_razmetka_2.setIcon(icon12)
+        icon2 = QIcon()
+        icon2.addFile(u":/operations/operations/goriz-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_razmetka_2.setIcon(icon2)
         self.btn_razmetka_2.setIconSize(QSize(70, 70))
 
         self.gridLayout.addWidget(self.btn_razmetka_2, 1, 1, 1, 1)
 
-        self.btn_kontrol_otk_4 = QPushButton(self.frame)
-        self.btn_kontrol_otk_4.setObjectName(u"btn_kontrol_otk_4")
-        self.btn_kontrol_otk_4.setEnabled(False)
-        self.btn_kontrol_otk_4.setFont(font3)
-        self.btn_kontrol_otk_4.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_4.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon13 = QIcon()
-        icon13.addFile(u":/operations/operations/painting.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_4.setIcon(icon13)
-        self.btn_kontrol_otk_4.setIconSize(QSize(50, 50))
+        self.btn_tokarnaya = QPushButton(self.frame)
+        self.btn_tokarnaya.setObjectName(u"btn_tokarnaya")
+        self.btn_tokarnaya.setFont(font3)
+        self.btn_tokarnaya.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_tokarnaya.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.btn_tokarnaya.setStyleSheet(u"")
+        icon3 = QIcon()
+        icon3.addFile(u":/operations/operations/tokarnaya-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_tokarnaya.setIcon(icon3)
+        self.btn_tokarnaya.setIconSize(QSize(70, 70))
 
-        self.gridLayout.addWidget(self.btn_kontrol_otk_4, 8, 1, 1, 1)
+        self.gridLayout.addWidget(self.btn_tokarnaya, 0, 0, 1, 1)
 
-        self.btn_kontrol_otk_6 = QPushButton(self.frame)
-        self.btn_kontrol_otk_6.setObjectName(u"btn_kontrol_otk_6")
-        self.btn_kontrol_otk_6.setEnabled(False)
-        self.btn_kontrol_otk_6.setFont(font3)
-        self.btn_kontrol_otk_6.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_6.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon14 = QIcon()
-        icon14.addFile(u":/operations/operations/balance.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_6.setIcon(icon14)
-        self.btn_kontrol_otk_6.setIconSize(QSize(60, 60))
+        self.btn_markirovanie = QPushButton(self.frame)
+        self.btn_markirovanie.setObjectName(u"btn_markirovanie")
+        self.btn_markirovanie.setFont(font3)
+        self.btn_markirovanie.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_markirovanie.setStyleSheet(u"")
+        icon4 = QIcon()
+        icon4.addFile(u":/operations/operations/markirovanie.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_markirovanie.setIcon(icon4)
+        self.btn_markirovanie.setIconSize(QSize(55, 55))
 
-        self.gridLayout.addWidget(self.btn_kontrol_otk_6, 9, 1, 1, 1)
-
-        self.btn_kontrol_otk_9 = QPushButton(self.frame)
-        self.btn_kontrol_otk_9.setObjectName(u"btn_kontrol_otk_9")
-        self.btn_kontrol_otk_9.setEnabled(False)
-        self.btn_kontrol_otk_9.setFont(font3)
-        self.btn_kontrol_otk_9.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_kontrol_otk_9.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon15 = QIcon()
-        icon15.addFile(u":/operations/operations/sborka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_9.setIcon(icon15)
-        self.btn_kontrol_otk_9.setIconSize(QSize(50, 35))
-
-        self.gridLayout.addWidget(self.btn_kontrol_otk_9, 4, 0, 1, 1)
-
-        self.btn_frezernaya = QPushButton(self.frame)
-        self.btn_frezernaya.setObjectName(u"btn_frezernaya")
-        self.btn_frezernaya.setEnabled(False)
-        font4 = QFont()
-        font4.setFamilies([u"Segoe UI Light"])
-        font4.setStrikeOut(False)
-        self.btn_frezernaya.setFont(font4)
-        self.btn_frezernaya.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
-        self.btn_frezernaya.setStyleSheet(u"QPushButton:hover {\n"
-"	color: rgb(221, 71, 71);\n"
-"	border-left: 1px solid rgb(203, 88, 88);\n"
-"	border-right: 1px solid rgb(203, 88, 88);\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
-"}")
-        icon16 = QIcon()
-        icon16.addFile(u":/operations/operations/frezernaya-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_frezernaya.setIcon(icon16)
-        self.btn_frezernaya.setIconSize(QSize(60, 60))
-
-        self.gridLayout.addWidget(self.btn_frezernaya, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.btn_markirovanie, 9, 0, 1, 1)
 
         self.btn_razmetka = QPushButton(self.frame)
         self.btn_razmetka.setObjectName(u"btn_razmetka")
         self.btn_razmetka.setFont(font3)
         self.btn_razmetka.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.btn_razmetka.setStyleSheet(u"")
-        icon17 = QIcon()
-        icon17.addFile(u":/operations/operations/razmetka-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_razmetka.setIcon(icon17)
+        icon5 = QIcon()
+        icon5.addFile(u":/operations/operations/razmetka-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_razmetka.setIcon(icon5)
         self.btn_razmetka.setIconSize(QSize(70, 70))
 
         self.gridLayout.addWidget(self.btn_razmetka, 1, 0, 1, 1)
@@ -499,24 +291,63 @@ class Ui_PageSelectOperation(object):
 "	border-right: 1px solid rgb(203, 88, 88);\n"
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
 "}")
-        icon18 = QIcon()
-        icon18.addFile(u":/operations/operations/shpatlevanie.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_11.setIcon(icon18)
+        icon6 = QIcon()
+        icon6.addFile(u":/operations/operations/shpatlevanie.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_11.setIcon(icon6)
         self.btn_kontrol_otk_11.setIconSize(QSize(55, 55))
 
-        self.gridLayout.addWidget(self.btn_kontrol_otk_11, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.btn_kontrol_otk_11, 6, 0, 1, 1)
 
-        self.btn_markirovanie = QPushButton(self.frame)
-        self.btn_markirovanie.setObjectName(u"btn_markirovanie")
-        self.btn_markirovanie.setFont(font3)
-        self.btn_markirovanie.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
-        self.btn_markirovanie.setStyleSheet(u"")
-        icon19 = QIcon()
-        icon19.addFile(u":/operations/operations/markirovanie.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_markirovanie.setIcon(icon19)
-        self.btn_markirovanie.setIconSize(QSize(55, 55))
+        self.btn_kontrol_otk = QPushButton(self.frame)
+        self.btn_kontrol_otk.setObjectName(u"btn_kontrol_otk")
+        self.btn_kontrol_otk.setFont(font3)
+        self.btn_kontrol_otk.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_kontrol_otk.setStyleSheet(u"")
+        icon7 = QIcon()
+        icon7.addFile(u":/operations/operations/otk-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk.setIcon(icon7)
+        self.btn_kontrol_otk.setIconSize(QSize(50, 50))
 
-        self.gridLayout.addWidget(self.btn_markirovanie, 8, 0, 1, 1)
+        self.gridLayout.addWidget(self.btn_kontrol_otk, 2, 0, 1, 1)
+
+        self.btn_kontrol_otk_12 = QPushButton(self.frame)
+        self.btn_kontrol_otk_12.setObjectName(u"btn_kontrol_otk_12")
+        self.btn_kontrol_otk_12.setEnabled(False)
+        self.btn_kontrol_otk_12.setFont(font3)
+        self.btn_kontrol_otk_12.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_12.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon8 = QIcon()
+        icon8.addFile(u":/operations/operations/slesarnaya.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_12.setIcon(icon8)
+        self.btn_kontrol_otk_12.setIconSize(QSize(55, 55))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_12, 8, 0, 1, 1)
+
+        self.btn_frezernaya = QPushButton(self.frame)
+        self.btn_frezernaya.setObjectName(u"btn_frezernaya")
+        self.btn_frezernaya.setEnabled(False)
+        font4 = QFont()
+        font4.setFamilies([u"Segoe UI Light"])
+        font4.setStrikeOut(False)
+        self.btn_frezernaya.setFont(font4)
+        self.btn_frezernaya.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_frezernaya.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon9 = QIcon()
+        icon9.addFile(u":/operations/operations/frezernaya-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_frezernaya.setIcon(icon9)
+        self.btn_frezernaya.setIconSize(QSize(60, 60))
+
+        self.gridLayout.addWidget(self.btn_frezernaya, 2, 1, 1, 1)
 
         self.btn_kontrol_otk_3 = QPushButton(self.frame)
         self.btn_kontrol_otk_3.setObjectName(u"btn_kontrol_otk_3")
@@ -529,12 +360,199 @@ class Ui_PageSelectOperation(object):
 "	border-right: 1px solid rgb(203, 88, 88);\n"
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
 "}")
-        icon20 = QIcon()
-        icon20.addFile(u":/operations/operations/promivka-no-bg-preview (carve.photos).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_kontrol_otk_3.setIcon(icon20)
+        icon10 = QIcon()
+        icon10.addFile(u":/operations/operations/promivka-no-bg-preview (carve.photos).png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_3.setIcon(icon10)
         self.btn_kontrol_otk_3.setIconSize(QSize(50, 50))
 
-        self.gridLayout.addWidget(self.btn_kontrol_otk_3, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.btn_kontrol_otk_3, 7, 0, 1, 1)
+
+        self.btn_sverlilnaya = QPushButton(self.frame)
+        self.btn_sverlilnaya.setObjectName(u"btn_sverlilnaya")
+        self.btn_sverlilnaya.setFont(font3)
+        self.btn_sverlilnaya.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_sverlilnaya.setStyleSheet(u"")
+        icon11 = QIcon()
+        icon11.addFile(u":/operations/operations/sverlovka-no-bg.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_sverlilnaya.setIcon(icon11)
+        self.btn_sverlilnaya.setIconSize(QSize(60, 60))
+
+        self.gridLayout.addWidget(self.btn_sverlilnaya, 0, 1, 1, 1)
+
+        self.btn_kontrol_otk_9 = QPushButton(self.frame)
+        self.btn_kontrol_otk_9.setObjectName(u"btn_kontrol_otk_9")
+        self.btn_kontrol_otk_9.setEnabled(False)
+        self.btn_kontrol_otk_9.setFont(font3)
+        self.btn_kontrol_otk_9.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_9.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon12 = QIcon()
+        icon12.addFile(u":/operations/operations/sborka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_9.setIcon(icon12)
+        self.btn_kontrol_otk_9.setIconSize(QSize(50, 35))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_9, 5, 0, 1, 1)
+
+        self.btn_kontrol_otk_2 = QPushButton(self.frame)
+        self.btn_kontrol_otk_2.setObjectName(u"btn_kontrol_otk_2")
+        self.btn_kontrol_otk_2.setEnabled(False)
+        self.btn_kontrol_otk_2.setFont(font3)
+        self.btn_kontrol_otk_2.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_2.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon13 = QIcon()
+        icon13.addFile(u":/operations/operations/hydro_ispit.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_2.setIcon(icon13)
+        self.btn_kontrol_otk_2.setIconSize(QSize(50, 50))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_2, 4, 0, 1, 1)
+
+        self.btn_kontrol_otk_13 = QPushButton(self.frame)
+        self.btn_kontrol_otk_13.setObjectName(u"btn_kontrol_otk_13")
+        self.btn_kontrol_otk_13.setEnabled(True)
+        self.btn_kontrol_otk_13.setFont(font3)
+        self.btn_kontrol_otk_13.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_13.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon14 = QIcon()
+        icon14.addFile(u":/operations/operations/cut.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_13.setIcon(icon14)
+        self.btn_kontrol_otk_13.setIconSize(QSize(60, 60))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_13, 3, 0, 1, 1)
+
+        self.btn_shlifovanie = QPushButton(self.frame)
+        self.btn_shlifovanie.setObjectName(u"btn_shlifovanie")
+        self.btn_shlifovanie.setEnabled(True)
+        self.btn_shlifovanie.setFont(font3)
+        self.btn_shlifovanie.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
+        self.btn_shlifovanie.setStyleSheet(u"")
+        icon15 = QIcon()
+        icon15.addFile(u":/operations/operations/shlifovka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_shlifovanie.setIcon(icon15)
+        self.btn_shlifovanie.setIconSize(QSize(45, 45))
+
+        self.gridLayout.addWidget(self.btn_shlifovanie, 3, 1, 1, 1)
+
+        self.btn_kontrol_otk_5 = QPushButton(self.frame)
+        self.btn_kontrol_otk_5.setObjectName(u"btn_kontrol_otk_5")
+        self.btn_kontrol_otk_5.setEnabled(False)
+        self.btn_kontrol_otk_5.setFont(font3)
+        self.btn_kontrol_otk_5.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_5.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon16 = QIcon()
+        icon16.addFile(u":/operations/operations/svarka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_5.setIcon(icon16)
+        self.btn_kontrol_otk_5.setIconSize(QSize(70, 70))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_5, 4, 1, 1, 1)
+
+        self.btn_kontrol_otk_7 = QPushButton(self.frame)
+        self.btn_kontrol_otk_7.setObjectName(u"btn_kontrol_otk_7")
+        self.btn_kontrol_otk_7.setEnabled(False)
+        self.btn_kontrol_otk_7.setFont(font3)
+        self.btn_kontrol_otk_7.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_7.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon17 = QIcon()
+        icon17.addFile(u":/operations/operations/gel_ispit.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_7.setIcon(icon17)
+        self.btn_kontrol_otk_7.setIconSize(QSize(70, 70))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_7, 5, 1, 1, 1)
+
+        self.btn_kontrol_otk_8 = QPushButton(self.frame)
+        self.btn_kontrol_otk_8.setObjectName(u"btn_kontrol_otk_8")
+        self.btn_kontrol_otk_8.setEnabled(False)
+        self.btn_kontrol_otk_8.setFont(font3)
+        self.btn_kontrol_otk_8.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_8.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon18 = QIcon()
+        icon18.addFile(u":/operations/operations/elect_ispit.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_8.setIcon(icon18)
+        self.btn_kontrol_otk_8.setIconSize(QSize(70, 70))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_8, 6, 1, 1, 1)
+
+        self.btn_kontrol_otk_10 = QPushButton(self.frame)
+        self.btn_kontrol_otk_10.setObjectName(u"btn_kontrol_otk_10")
+        self.btn_kontrol_otk_10.setEnabled(False)
+        self.btn_kontrol_otk_10.setFont(font3)
+        self.btn_kontrol_otk_10.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_10.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon19 = QIcon()
+        icon19.addFile(u":/operations/operations/term_obrabotka.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_10.setIcon(icon19)
+        self.btn_kontrol_otk_10.setIconSize(QSize(55, 55))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_10, 7, 1, 1, 1)
+
+        self.btn_kontrol_otk_4 = QPushButton(self.frame)
+        self.btn_kontrol_otk_4.setObjectName(u"btn_kontrol_otk_4")
+        self.btn_kontrol_otk_4.setEnabled(False)
+        self.btn_kontrol_otk_4.setFont(font3)
+        self.btn_kontrol_otk_4.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_4.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon20 = QIcon()
+        icon20.addFile(u":/operations/operations/painting.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_4.setIcon(icon20)
+        self.btn_kontrol_otk_4.setIconSize(QSize(50, 50))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_4, 8, 1, 1, 1)
+
+        self.btn_kontrol_otk_6 = QPushButton(self.frame)
+        self.btn_kontrol_otk_6.setObjectName(u"btn_kontrol_otk_6")
+        self.btn_kontrol_otk_6.setEnabled(False)
+        self.btn_kontrol_otk_6.setFont(font3)
+        self.btn_kontrol_otk_6.setCursor(QCursor(Qt.CursorShape.ForbiddenCursor))
+        self.btn_kontrol_otk_6.setStyleSheet(u"QPushButton:hover {\n"
+"	color: rgb(221, 71, 71);\n"
+"	border-left: 1px solid rgb(203, 88, 88);\n"
+"	border-right: 1px solid rgb(203, 88, 88);\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0.477, x2:1, y2:0.518, stop:0 rgba(160, 18, 18, 58), stop:0.505682 rgba(15, 111, 149, 0), stop:1 rgba(160, 17, 17, 58))\n"
+"}")
+        icon21 = QIcon()
+        icon21.addFile(u":/operations/operations/balance.PNG", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.btn_kontrol_otk_6.setIcon(icon21)
+        self.btn_kontrol_otk_6.setIconSize(QSize(60, 60))
+
+        self.gridLayout.addWidget(self.btn_kontrol_otk_6, 9, 1, 1, 1)
 
 
         self.verticalLayout_4.addLayout(self.gridLayout)
@@ -628,16 +646,6 @@ class Ui_PageSelectOperation(object):
         self.label_select.setText(QCoreApplication.translate("PageSelectOperation", u"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u044e \u0434\u043b\u044f \u0437\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043f\u0435\u0440\u0435\u0445\u043e\u0434\u043e\u0432", None))
         self.label_3.setText("")
         self.btn_sborka.setText(QCoreApplication.translate("PageSelectOperation", u"\u041f\u0420\u041e\u0427\u0418\u0415 \u041e\u041f\u0415\u0420\u0410\u0426\u0418\u0418", None))
-        self.btn_shlifovanie.setText(QCoreApplication.translate("PageSelectOperation", u"\u0428\u041b\u0418\u0424\u041e\u0412\u0410\u041b\u042c\u041d\u0410\u042f", None))
-        self.btn_kontrol_otk_5.setText(QCoreApplication.translate("PageSelectOperation", u" \u0421\u0412\u0410\u0420\u041a\u0410", None))
-        self.btn_kontrol_otk.setText(QCoreApplication.translate("PageSelectOperation", u"        \u041a\u041e\u041d\u0422\u0420\u041e\u041b\u042c \u041e\u0422\u041a", None))
-        self.btn_tokarnaya.setText(QCoreApplication.translate("PageSelectOperation", u" \u0422\u041e\u041a\u0410\u0420\u041d\u0410\u042f", None))
-        self.btn_kontrol_otk_10.setText(QCoreApplication.translate("PageSelectOperation", u"    \u0422\u0415\u0420\u041c\u041e\u041e\u0411\u0420\u0410\u0411\u041e\u0422\u041a\u0410", None))
-        self.btn_sverlilnaya.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0421\u0412\u0415\u0420\u041b\u0418\u041b\u042c\u041d\u0410\u042f", None))
-        self.btn_kontrol_otk_2.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0413\u0418\u0414\u0420\u0410\u0412\u041b\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f", None))
-        self.btn_kontrol_otk_8.setText(QCoreApplication.translate("PageSelectOperation", u" \u042d\u041b\u0415\u041a\u0422\u0420\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f", None))
-        self.btn_kontrol_otk_12.setText(QCoreApplication.translate("PageSelectOperation", u"\u0421\u041b\u0415\u0421\u0410\u0420\u041d\u0410\u042f", None))
-        self.btn_kontrol_otk_7.setText(QCoreApplication.translate("PageSelectOperation", u" \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f \u041d\u0410 \u0413\u0415\u0420\u041c\u0415\u0422\u0418\u0427\u041d\u041e\u0421\u0422\u042c", None))
 #if QT_CONFIG(tooltip)
         self.btn_razmetka_2.setToolTip(QCoreApplication.translate("PageSelectOperation", u"<html><head/><body><p><span style=\" font-size:8pt; color:#000000;\">\u0412 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0435</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
@@ -645,17 +653,28 @@ class Ui_PageSelectOperation(object):
         self.btn_razmetka_2.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.btn_razmetka_2.setText(QCoreApplication.translate("PageSelectOperation", u" \u0413\u041e\u0420\u0418\u0417\u041e\u041d\u0422\u0410\u041b\u042c\u041d\u041e-\u0420\u0410\u0421\u0422\u041e\u0427\u041d\u0410\u042f", None))
-        self.btn_kontrol_otk_4.setText(QCoreApplication.translate("PageSelectOperation", u"     \u041e\u041a\u0420\u0410\u0428\u0418\u0412\u0410\u041d\u0418\u0415", None))
-        self.btn_kontrol_otk_6.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0411\u0410\u041b\u0410\u041d\u0421\u0418\u0420\u041e\u0412\u041a\u0410", None))
-        self.btn_kontrol_otk_9.setText(QCoreApplication.translate("PageSelectOperation", u"       \u0421\u0411\u041e\u0420\u041a\u0410", None))
+        self.btn_tokarnaya.setText(QCoreApplication.translate("PageSelectOperation", u" \u0422\u041e\u041a\u0410\u0420\u041d\u0410\u042f", None))
+        self.btn_markirovanie.setText(QCoreApplication.translate("PageSelectOperation", u"\u041c\u0410\u0420\u041a\u0418\u0420\u041e\u0412\u0410\u041d\u0418\u0415", None))
+        self.btn_razmetka.setText(QCoreApplication.translate("PageSelectOperation", u"  \u0420\u0410\u0417\u041c\u0415\u0422\u041a\u0410", None))
+        self.btn_kontrol_otk_11.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0428\u041f\u0410\u0422\u041b\u0415\u0412\u0410\u041d\u0418\u0415", None))
+        self.btn_kontrol_otk.setText(QCoreApplication.translate("PageSelectOperation", u"        \u041a\u041e\u041d\u0422\u0420\u041e\u041b\u042c \u041e\u0422\u041a", None))
+        self.btn_kontrol_otk_12.setText(QCoreApplication.translate("PageSelectOperation", u"\u0421\u041b\u0415\u0421\u0410\u0420\u041d\u0410\u042f", None))
 #if QT_CONFIG(tooltip)
         self.btn_frezernaya.setToolTip(QCoreApplication.translate("PageSelectOperation", u"<html><head/><body><p><span style=\" font-size:8pt; color:#000000;\">\u0412 \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0435</span></p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_frezernaya.setText(QCoreApplication.translate("PageSelectOperation", u"      \u0424\u0420\u0415\u0417\u0415\u0420\u041d\u0410\u042f", None))
-        self.btn_razmetka.setText(QCoreApplication.translate("PageSelectOperation", u"  \u0420\u0410\u0417\u041c\u0415\u0422\u041a\u0410", None))
-        self.btn_kontrol_otk_11.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0428\u041f\u0410\u0422\u041b\u0415\u0412\u0410\u041d\u0418\u0415", None))
-        self.btn_markirovanie.setText(QCoreApplication.translate("PageSelectOperation", u"\u041c\u0410\u0420\u041a\u0418\u0420\u041e\u0412\u0410\u041d\u0418\u0415", None))
         self.btn_kontrol_otk_3.setText(QCoreApplication.translate("PageSelectOperation", u"     \u041f\u0420\u041e\u041c\u042b\u0412\u041a\u0410", None))
+        self.btn_sverlilnaya.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0421\u0412\u0415\u0420\u041b\u0418\u041b\u042c\u041d\u0410\u042f", None))
+        self.btn_kontrol_otk_9.setText(QCoreApplication.translate("PageSelectOperation", u"       \u0421\u0411\u041e\u0420\u041a\u0410", None))
+        self.btn_kontrol_otk_2.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0413\u0418\u0414\u0420\u0410\u0412\u041b\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f", None))
+        self.btn_kontrol_otk_13.setText(QCoreApplication.translate("PageSelectOperation", u"   \u041e\u0422\u0420\u0415\u0417\u041d\u0410\u042f", None))
+        self.btn_shlifovanie.setText(QCoreApplication.translate("PageSelectOperation", u"\u0428\u041b\u0418\u0424\u041e\u0412\u0410\u041b\u042c\u041d\u0410\u042f", None))
+        self.btn_kontrol_otk_5.setText(QCoreApplication.translate("PageSelectOperation", u" \u0421\u0412\u0410\u0420\u041a\u0410", None))
+        self.btn_kontrol_otk_7.setText(QCoreApplication.translate("PageSelectOperation", u" \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f \u041d\u0410 \u0413\u0415\u0420\u041c\u0415\u0422\u0418\u0427\u041d\u041e\u0421\u0422\u042c", None))
+        self.btn_kontrol_otk_8.setText(QCoreApplication.translate("PageSelectOperation", u" \u042d\u041b\u0415\u041a\u0422\u0420\u0418\u0427\u0415\u0421\u041a\u0418\u0415 \u0418\u0421\u041f\u042b\u0422\u0410\u041d\u0418\u042f", None))
+        self.btn_kontrol_otk_10.setText(QCoreApplication.translate("PageSelectOperation", u"    \u0422\u0415\u0420\u041c\u041e\u041e\u0411\u0420\u0410\u0411\u041e\u0422\u041a\u0410", None))
+        self.btn_kontrol_otk_4.setText(QCoreApplication.translate("PageSelectOperation", u"     \u041e\u041a\u0420\u0410\u0428\u0418\u0412\u0410\u041d\u0418\u0415", None))
+        self.btn_kontrol_otk_6.setText(QCoreApplication.translate("PageSelectOperation", u"     \u0411\u0410\u041b\u0410\u041d\u0421\u0418\u0420\u041e\u0412\u041a\u0410", None))
         self.btn_tehno_iot.setText(QCoreApplication.translate("PageSelectOperation", u"\u0414\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043a \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0418\u041e\u0422 \u0438 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435", None))
         self.btn_normirovanie.setText(QCoreApplication.translate("PageSelectOperation", u"\u041d\u043e\u0440\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435", None))
     # retranslateUi
