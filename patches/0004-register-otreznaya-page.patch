@@ -1,0 +1,61 @@
+From 8589daba769b6695ef4f5e185f8888d1f8d82c41 Mon Sep 17 00:00:00 2001
+From: "qwen.ai[bot]" <qwenlm-intl@service.alibaba.com>
+Date: Fri, 23 Oct 2026 14:39:24 +0000
+Subject: [PATCH] =?UTF-8?q?page=5Fotreznaya:=20=D1=80=D0=B5=D0=B3=D0=B8?=
+ =?UTF-8?q?=D1=81=D1=82=D1=80=D0=B0=D1=86=D0=B8=D1=8F=20=D1=81=D1=82=D1=80?=
+ =?UTF-8?q?=D0=B0=D0=BD=D0=B8=D1=86=D1=8B=20=D0=B2=20ui=5Fautoinput=20+=20?=
+ =?UTF-8?q?=D0=B4=D0=B8=D0=BD=D0=B0=D0=BC=D0=B8=D1=87=D0=B5=D1=81=D0=BA?=
+ =?UTF-8?q?=D0=B8=D0=B9=20=D0=B8=D0=BD=D0=B4=D0=B5=D0=BA=D1=81=20=D0=B2?=
+ =?UTF-8?q?=D0=BE=D0=B7=D0=B2=D1=80=D0=B0=D1=82=D0=B0?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ controllers/otreznaya_controller.py | 7 ++++---
+ ui_autoinput.py                     | 4 ++++
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/controllers/otreznaya_controller.py b/controllers/otreznaya_controller.py
+index 3638d91..efd6a27 100644
+--- a/controllers/otreznaya_controller.py
++++ b/controllers/otreznaya_controller.py
+@@ -29,9 +29,10 @@ class OtreznayaController(BaseOperationController):
+         return self.ui.page_otreznaya
+ 
+     def go_to_main_page(self):
+-        # TODO: проверь индекс! page_otreznaya добавлена в конец stackedWidget —
+-        # сейчас это индекс 21 (после page_shlifovanie_osnovnoe).
+-        self.ui.stackedWidget.setCurrentIndex(21)
++        # Возврат на страницу выбора операции (page_select_operation) —
++        # индекс вычисляется динамически, чтобы не ломаться при добавлении новых страниц.
++        idx = self.ui.stackedWidget.indexOf(self.ui.page_select_operation)
++        self.ui.stackedWidget.setCurrentIndex(idx)
+ 
+     def _go_to_main_page(self):
+         self.exit_to_main_menu_requested.emit()
+diff --git a/ui_autoinput.py b/ui_autoinput.py
+index 7a40eb5..e3408a1 100644
+--- a/ui_autoinput.py
++++ b/ui_autoinput.py
+@@ -27,6 +27,7 @@ from views.pages.page_sborka import PageSborka
+ from views.pages.page_select_operation import PageSelectOperation
+ from views.pages.page_shlifovanie import PageShlifovanie
+ from views.pages.page_shlifovanie_osnovnoe import PageShlifovanieOsnovnoe
++from views.pages.page_otreznaya import PageOtreznaya
+ from views.pages.page_shlifovanie_start import PageShlifovanieStart
+ from views.pages.page_sverlilnaya import PageSverlilnaya
+ from views.pages.page_tehno_iot import PageTehnoIot
+@@ -149,6 +150,9 @@ class Ui_MainWindow(object):
+         self.page_shlifovanie_osnovnoe = PageShlifovanieOsnovnoe()
+         self.page_shlifovanie_osnovnoe.setObjectName(u"page_shlifovanie_osnovnoe")
+         self.stackedWidget.addWidget(self.page_shlifovanie_osnovnoe)
++        self.page_otreznaya = PageOtreznaya()
++        self.page_otreznaya.setObjectName(u"page_otreznaya")
++        self.stackedWidget.addWidget(self.page_otreznaya)
+ 
+         self.verticalLayout.addWidget(self.stackedWidget)
+ 
+-- 
+2.39.5
+
