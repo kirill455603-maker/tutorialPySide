@@ -9,6 +9,7 @@ from controllers.normirovanie_controller import NormirovanieController
 from controllers.kontrol_otk_controller import KontrolOtkController
 from controllers.SlesarnieControllers.markirovanie_controller import MarkirovanieController
 from controllers.shlifovanie_controller import ShlifovanieController
+from controllers.otreznaya_controller import OtreznayaController
 from ui_autoinput import Ui_MainWindow
 
 
@@ -29,6 +30,7 @@ class MainWindow(QMainWindow):
         self.kotrol_otk_ctrl = KontrolOtkController(self.ui)
         self.markirovanie = MarkirovanieController(self.ui)
         self.shlifovanie_ctrl = ShlifovanieController(self.ui)
+        self.otreznaya_ctrl = OtreznayaController(self.ui)
 
 
         # Активный контроллер (тот, из которого перешли в Technopro)
@@ -67,6 +69,9 @@ class MainWindow(QMainWindow):
         self.ui.page_select_operation.btn_shlifovanie.connect(
             lambda: self._activate_controller(self.shlifovanie_ctrl)
         )
+        self.ui.page_select_operation.btn_otreznaya.connect(
+            lambda: self._activate_controller(self.otreznaya_ctrl)
+        )
 
 
         # 2. Возврат в главное меню
@@ -95,6 +100,9 @@ class MainWindow(QMainWindow):
             lambda: self.ui.stackedWidget.setCurrentIndex(0)
         )
         self.shlifovanie_ctrl.exit_to_main_menu_requested.connect(
+            lambda: self.ui.stackedWidget.setCurrentIndex(0)
+        )
+        self.otreznaya_ctrl.exit_to_main_menu_requested.connect(
             lambda: self.ui.stackedWidget.setCurrentIndex(0)
         )
 
