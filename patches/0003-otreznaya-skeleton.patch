@@ -1,0 +1,326 @@
+From bc0ca1a60d78ec7bcf70f9c620e0f149e3a9e8c2 Mon Sep 17 00:00:00 2001
+From: "qwen.ai[bot]" <qwenlm-intl@service.alibaba.com>
+Date: Fri, 23 Oct 2026 14:13:52 +0000
+Subject: [PATCH] =?UTF-8?q?feat:=20=D0=BF=D0=BE=D0=B4=D0=BA=D0=BB=D1=8E?=
+ =?UTF-8?q?=D1=87=D0=B5=D0=BD=D0=B8=D0=B5=20=D0=BE=D0=BF=D0=B5=D1=80=D0=B0?=
+ =?UTF-8?q?=D1=86=D0=B8=D0=B8=20=D0=9E=D0=A2=D0=A0=D0=95=D0=97=D0=9D=D0=90?=
+ =?UTF-8?q?=D0=AF=20(=D0=BA=D0=B0=D1=80=D0=BA=D0=B0=D1=81=20=D1=81=D1=82?=
+ =?UTF-8?q?=D1=80=D0=B0=D0=BD=D0=B8=D1=86=D1=8B,=20=D0=BA=D0=BE=D0=BD?=
+ =?UTF-8?q?=D1=82=D1=80=D0=BE=D0=BB=D0=BB=D0=B5=D1=80=D0=B0=20=D0=B8=20?=
+ =?UTF-8?q?=D0=BB=D0=BE=D0=B3=D0=B8=D0=BA=D0=B8)?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ controllers/otreznaya_controller.py  | 69 ++++++++++++++++++++++
+ logic/operation_otreznaya.py         | 37 ++++++++++++
+ ui_autoinput.py                      |  4 ++
+ views/main_window.py                 |  8 +++
+ views/pages/page_otreznaya.py        | 87 ++++++++++++++++++++++++++++
+ views/pages/page_select_operation.py |  6 ++
+ 6 files changed, 211 insertions(+)
+ create mode 100644 controllers/otreznaya_controller.py
+ create mode 100644 logic/operation_otreznaya.py
+ create mode 100644 views/pages/page_otreznaya.py
+
+diff --git a/controllers/otreznaya_controller.py b/controllers/otreznaya_controller.py
+new file mode 100644
+index 0000000..3638d91
+--- /dev/null
++++ b/controllers/otreznaya_controller.py
+@@ -0,0 +1,69 @@
++from ui_autoinput import Ui_MainWindow
++from views.pages.page_otreznaya import PageOtreznaya
++from controllers.base_controller import BaseOperationController
++from logic.operation_otreznaya import OperationOtreznaya
++from logic.automation import TechnoproAutomation
++
++
++class OtreznayaController(BaseOperationController):
++    """Контроллер операции ОТРЕЗНАЯ (каркас, по образцу остальных операций)."""
++
++    def __init__(self, ui, parent=None):
++        super().__init__(ui, OperationOtreznaya(), TechnoproAutomation(), parent)
++        self.ui: Ui_MainWindow = ui
++        self.model: OperationOtreznaya = OperationOtreznaya()
++        self.automation: TechnoproAutomation = TechnoproAutomation()
++        self._connect_signals()
++
++    def _connect_signals(self):
++        self.ui.page_otreznaya.btn_home_clicked.connect(self._go_to_main_page)
++        self.ui.page_otreznaya.btn_save_clicked.connect(self._save_result)
++        self.ui.page_otreznaya.btn_click_delete.connect(self.delete_row)
++        self.ui.page_otreznaya.btn_clear_clicked.connect(self.clear_all)
++
++    # ================= ОБЯЗАТЕЛЬНЫЕ МЕТОДЫ =================
++    def get_operation_name(self) -> str:
++        return 'Отрезная'
++
++    def get_target_page(self):
++        return self.ui.page_otreznaya
++
++    def go_to_main_page(self):
++        # TODO: проверь индекс! page_otreznaya добавлена в конец stackedWidget —
++        # сейчас это индекс 21 (после page_shlifovanie_osnovnoe).
++        self.ui.stackedWidget.setCurrentIndex(21)
++
++    def _go_to_main_page(self):
++        self.exit_to_main_menu_requested.emit()
++
++    def clear_all(self):
++        """Очистка всех данных операции."""
++        self.model.clear_all()
++        self.model.all_instrument.clear()
++        self.ui.page_otreznaya.clear_table()
++        self.ui.page_otreznaya.show_label('Записанные данные в таблицу успешно удалены!')
++
++    def delete_row(self, r):
++        """Удаляет строку из таблицы и модели."""
++        item = self.model.operations[r]['описание']
++        if self.model.operations[r]['инструмент'].text() != '':
++            item_instrument = self.model.operations[r]['инструмент'].text()
++            self.model.find_and_delete_from_all_instrument(item_instrument.split('\n'))
++        row_index = self.ui.page_otreznaya.get_index_row(item)
++        self.ui.page_otreznaya.show_label(f'Строка №{row_index + 1} успешно удалена!')
++        self.ui.page_otreznaya.delete_row(row_index)
++        del self.model.operations[r]
++
++    # ================= СПЕЦИФИЧНЫЕ МЕТОДЫ =================
++    def _save_result(self):
++        """Сохранение результата операции.
++
++        TODO: заполни по образку MarkirovanieController._save_result /
++        других контроллеров, когда напишешь логику в OperationOtreznaya.
++        Пример:
++            self.clear_all()
++            d = self.ui.page_otreznaya.get_result()
++            result = self.model.<твоя_метод_логики>(d)
++            self._process_and_save_result(result)
++        """
++        pass
+diff --git a/logic/operation_otreznaya.py b/logic/operation_otreznaya.py
+new file mode 100644
+index 0000000..0caac74
+--- /dev/null
++++ b/logic/operation_otreznaya.py
+@@ -0,0 +1,37 @@
++from logic.operation_base import OperationBase
++from logic.instrument_manager import InstrumentManager
++
++
++class OperationOtreznaya(OperationBase):
++    """Модель (логика) операции ОТРЕЗНАЯ.
++
++    Каркас: наследуется от OperationBase, как остальные операции.
++    TODO: напиши здесь методы формирования описаний операций,
++          например: def otrezka(self, d: dict) -> dict: ...
++    """
++
++    def __init__(self):
++        super().__init__()
++        # PNG-шаблон для поиска строки операции в Technopro
++        self.image = 'logic/find_operations/otreznaya_find.PNG'  # TODO: положи свой шаблон сюда
++        self.instrument_manager = InstrumentManager()
++        self.operations = {}
++
++    @property
++    def all_instrument(self):
++        return self.instrument_manager.all_instrument
++
++    def find_and_delete_from_all_instrument(self, instruments: list):
++        self.instrument_manager.remove(instruments)
++
++    def take_value_matches(self) -> int:
++        return self.automation.take_value_matches(self.image)
++
++    # =====================================================================
++    # TODO: Логика операции ОТРЕЗНАЯ — напиши сам по образку других операций
++    # Пример сигнатуры:
++    # def otrezka(self, d: dict) -> dict:
++    #     result = {'описание': '', 'инструмент': []}
++    #     ...
++    #     return result
++    # =====================================================================
+diff --git a/ui_autoinput.py b/ui_autoinput.py
+index 7a40eb5..0a75695 100644
+--- a/ui_autoinput.py
++++ b/ui_autoinput.py
+@@ -30,6 +30,7 @@ from views.pages.page_shlifovanie_osnovnoe import PageShlifovanieOsnovnoe
+ from views.pages.page_shlifovanie_start import PageShlifovanieStart
+ from views.pages.page_sverlilnaya import PageSverlilnaya
+ from views.pages.page_tehno_iot import PageTehnoIot
++from views.pages.page_otreznaya import PageOtreznaya
+ from views.pages.page_tokarnaya import PageTokarnaya
+ from views.pages.page_tokarnaya_angle import PageTokarnayaAngle
+ from views.pages.page_tokarnaya_faska import PageTokarnayaFaska
+@@ -149,6 +150,9 @@ class Ui_MainWindow(object):
+         self.page_shlifovanie_osnovnoe = PageShlifovanieOsnovnoe()
+         self.page_shlifovanie_osnovnoe.setObjectName(u"page_shlifovanie_osnovnoe")
+         self.stackedWidget.addWidget(self.page_shlifovanie_osnovnoe)
++        self.page_otreznaya = PageOtreznaya()
++        self.page_otreznaya.setObjectName(u"page_otreznaya")
++        self.stackedWidget.addWidget(self.page_otreznaya)
+ 
+         self.verticalLayout.addWidget(self.stackedWidget)
+ 
+diff --git a/views/main_window.py b/views/main_window.py
+index a67d7fd..aad148f 100644
+--- a/views/main_window.py
++++ b/views/main_window.py
+@@ -9,6 +9,7 @@ from controllers.normirovanie_controller import NormirovanieController
+ from controllers.kontrol_otk_controller import KontrolOtkController
+ from controllers.SlesarnieControllers.markirovanie_controller import MarkirovanieController
+ from controllers.shlifovanie_controller import ShlifovanieController
++from controllers.otreznaya_controller import OtreznayaController
+ from ui_autoinput import Ui_MainWindow
+ 
+ 
+@@ -29,6 +30,7 @@ class MainWindow(QMainWindow):
+         self.kotrol_otk_ctrl = KontrolOtkController(self.ui)
+         self.markirovanie = MarkirovanieController(self.ui)
+         self.shlifovanie_ctrl = ShlifovanieController(self.ui)
++        self.otreznaya_ctrl = OtreznayaController(self.ui)
+ 
+ 
+         # Активный контроллер (тот, из которого перешли в Technopro)
+@@ -67,6 +69,9 @@ class MainWindow(QMainWindow):
+         self.ui.page_select_operation.btn_shlifovanie.connect(
+             lambda: self._activate_controller(self.shlifovanie_ctrl)
+         )
++        self.ui.page_select_operation.btn_otreznaya.connect(
++            lambda: self._activate_controller(self.otreznaya_ctrl)
++        )
+ 
+ 
+         # 2. Возврат в главное меню
+@@ -97,6 +102,9 @@ class MainWindow(QMainWindow):
+         self.shlifovanie_ctrl.exit_to_main_menu_requested.connect(
+             lambda: self.ui.stackedWidget.setCurrentIndex(0)
+         )
++        self.otreznaya_ctrl.exit_to_main_menu_requested.connect(
++            lambda: self.ui.stackedWidget.setCurrentIndex(0)
++        )
+ 
+ 
+         # 3. Technopro — подключаем ОДИН РАЗ, делегируем активному контроллеру
+diff --git a/views/pages/page_otreznaya.py b/views/pages/page_otreznaya.py
+new file mode 100644
+index 0000000..d1df398
+--- /dev/null
++++ b/views/pages/page_otreznaya.py
+@@ -0,0 +1,87 @@
++from ui_page_otreznaya import Ui_PageOtreznaya  # Поменять на своё имя класса из ui_page_otreznaya.py
++from PySide6.QtCore import Signal
++from PySide6.QtWidgets import QWidget, QPushButton, QHeaderView
++
++
++class PageOtreznaya(QWidget):
++    """Страница операции ОТРЕЗНАЯ. Наследуется от ui_page_otreznaya.Ui_PageOtreznaya."""
++    btn_home_clicked = Signal()
++    btn_save_clicked = Signal()
++    btn_click_delete = Signal(int)
++    btn_clear_clicked = Signal()
++
++    def __init__(self, parent=None):
++        super().__init__(parent)
++        self.ui = Ui_PageOtreznaya()
++        self.ui.setupUi(self)
++
++        # ===== НАСТРОЙКА ТАБЛИЦЫ (как в остальных страницах) =====
++        self.ui.table_widget.verticalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
++        self.ui.table_widget.horizontalHeader().setSectionResizeMode(0, QHeaderView.Fixed)
++        self.ui.table_widget.horizontalHeader().setSectionResizeMode(1, QHeaderView.Fixed)
++        self.ui.table_widget.horizontalHeader().setSectionResizeMode(2, QHeaderView.Stretch)
++        self.ui.table_widget.horizontalHeader().resizeSection(0, 400)
++        self.ui.table_widget.horizontalHeader().resizeSection(1, 600)
++        self.ui.table_widget.setWordWrap(True)
++        # =========================================================
++
++        # ВАЖНО: храним ссылки на кнопки удаления, чтобы их не удалил сборщик мусора
++        self._delete_buttons = []
++
++        self.ui.btn_home.clicked.connect(self._on_button_home_clicked)
++        self.ui.pushButton_save.clicked.connect(self._on_button_save_clicked)
++        self.ui.btn_clear_table.clicked.connect(self._on_button_clear_clicked)
++
++    # ---------- обработчики кнопок ----------
++    def _on_button_home_clicked(self):
++        self.btn_home_clicked.emit()
++
++    def _on_button_save_clicked(self):
++        self.btn_save_clicked.emit()
++
++    def _on_button_clear_clicked(self):
++        self.btn_clear_clicked.emit()
++
++    # ---------- методы таблицы (использует контроллер) ----------
++    def show_result(self, text, instrument, key_count):
++        """Добавляет строку в таблицу."""
++        self.ui.table_widget.setRowCount(self.ui.table_widget.rowCount() + 1)
++        row = self.ui.table_widget.rowCount() - 1
++
++        self.ui.table_widget.setItem(row, 0, instrument)
++        self.ui.table_widget.setItem(row, 1, text)
++
++        btn_delete = QPushButton('Удалить')
++        btn_delete.clicked.connect(
++            lambda checked, r=key_count: self.on_delete_clicked(r)
++        )
++        self._delete_buttons.append(btn_delete)
++        btn_delete.resize(50, 20)
++        self.ui.table_widget.setCellWidget(row, 2, btn_delete)
++
++    def on_delete_clicked(self, r):
++        self.btn_click_delete.emit(r)
++
++    def get_index_row(self, item):
++        return self.ui.table_widget.row(item)
++
++    def delete_row(self, r):
++        self.ui.table_widget.removeRow(r)
++
++    def clear_table(self):
++        """Очистка таблицы. ОБЯЗАТЕЛЬНЫЙ метод."""
++        self.ui.table_widget.clear()
++        self.ui.table_widget.setRowCount(0)
++        self.ui.table_widget.setHorizontalHeaderLabels(
++            ['Инструмент', 'Описание [Можно изменять]', '']
++        )
++        self._delete_buttons.clear()
++
++    def show_label(self, text):
++        """Вывод сообщения/ошибки на странице."""
++        # TODO: подставь имя своего label из дизайна, если он отличается
++        self.ui.label_error.setText(text)
++
++    def error_style_sheet(self):
++        # TODO: стиль ошибки, как на других страницах (по желанию)
++        pass
+diff --git a/views/pages/page_select_operation.py b/views/pages/page_select_operation.py
+index 0acadf9..889ab07 100644
+--- a/views/pages/page_select_operation.py
++++ b/views/pages/page_select_operation.py
+@@ -14,6 +14,7 @@ class PageSelectOperation(QWidget):
+     btn_kontrol_otk = Signal()
+     btn_markirovanie = Signal()
+     btn_shlifovanie = Signal()
++    btn_otreznaya = Signal()
+     def __init__(self, parent=None):
+         super().__init__(parent)
+         self.ui = Ui_PageSelectOperation()
+@@ -30,6 +31,11 @@ class PageSelectOperation(QWidget):
+         self.ui.btn_predlog.clicked.connect(self._on_btn_predlog_clicked)
+         self.ui.btn_markirovanie.clicked.connect(self._on_btn_markirovanie_clicked)
+         self.ui.btn_shlifovanie.clicked.connect(self._on_btn_shlifovanie_clicked)
++        # Кнопка "ОТРЕЗНАЯ" в Designer имеет objectName btn_kontrol_otk_13
++        self.ui.btn_kontrol_otk_13.clicked.connect(self._on_btn_otreznaya_clicked)
++
++    def _on_btn_otreznaya_clicked(self):
++        self.btn_otreznaya.emit()
+ 
+     def _on_btn_shlifovanie_clicked(self):
+         self.btn_shlifovanie.emit()
+-- 
+2.39.5
+
