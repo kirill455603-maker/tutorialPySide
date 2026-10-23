@@ -14,6 +14,7 @@ class PageSelectOperation(QWidget):
     btn_kontrol_otk = Signal()
     btn_markirovanie = Signal()
     btn_shlifovanie = Signal()
+    btn_otreznaya = Signal()
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_PageSelectOperation()
@@ -30,6 +31,11 @@ class PageSelectOperation(QWidget):
         self.ui.btn_predlog.clicked.connect(self._on_btn_predlog_clicked)
         self.ui.btn_markirovanie.clicked.connect(self._on_btn_markirovanie_clicked)
         self.ui.btn_shlifovanie.clicked.connect(self._on_btn_shlifovanie_clicked)
+        # Кнопка "ОТРЕЗНАЯ" в Designer имеет objectName btn_kontrol_otk_13
+        self.ui.btn_kontrol_otk_13.clicked.connect(self._on_btn_otreznaya_clicked)
+
+    def _on_btn_otreznaya_clicked(self):
+        self.btn_otreznaya.emit()
 
     def _on_btn_shlifovanie_clicked(self):
         self.btn_shlifovanie.emit()
